@@ -1,5 +1,6 @@
 package com.redbee.academy.clase3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Dolar {
@@ -29,7 +30,16 @@ public class Dolar {
      * @return
      */
     public static Float resolver(List<Float> historicoDolar) {
-        //TODO: implementar
-        return null;
+        List<Float> alza= new ArrayList<>();
+        for (int i=1;i<historicoDolar.size();i++) {
+            alza.add(historicoDolar.get(i)- historicoDolar.get(i-1));
+        }
+        float max= alza.get(0);
+        for (int i=1;i<alza.size();i++){
+            if(max< alza.get(i)){
+                max= alza.get(i);
+            }
+        }
+        return max;
     }
 }

@@ -12,7 +12,16 @@ public class Palindromo {
      * @return
      */
     public static Boolean esPalindromo(String palabra) {
-        // TODO: implementar
-        return null;
+        Boolean pal = true;
+        Integer counter = 0;
+        palabra=palabra.toLowerCase().replace(" ", "");
+        while (pal && counter<palabra.length()) {
+            if (palabra.charAt(counter) != palabra.charAt(palabra.length() - 1 - counter)) {
+                pal = false;
+            } else {
+                counter++;
+            }
+        }
+        return pal;
     }
 }

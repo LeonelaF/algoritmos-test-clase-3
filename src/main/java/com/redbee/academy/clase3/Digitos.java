@@ -9,7 +9,12 @@ public class Digitos {
      * @return
      */
     public static Integer resolver(Long numero) {
-        //TODO: implementar
-        return null;
+        Integer count=1;
+        while(numero>9){
+            numero=numero/10;
+            count++;
+
+        }
+        return count;
     }
 }
